@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+// Connexion à la base de données nomer database1234
 $servername = "localhost";
 $username = "root";
 $password = "";
