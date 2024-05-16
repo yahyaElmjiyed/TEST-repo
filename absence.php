@@ -1,5 +1,5 @@
 <?php
-// Connexion A DB
+// Connexion à la base de données
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 // on recupere les absence de la base de donne en utilisant des requetes sql simple
-$sql = "SELECT id, name, start_date, end_date, reason FROM absences";
+$sql = "SELECT id, name, start_date, end_date, reason FROM absences ORDER BY id ASC";
 $result = $conn->query($sql);     // $conn : heya wa7d variable li drna lfog bach ndiro conection to data base
                                   // query(): 3tinaha l parametre $sql li deja feh une requete sql donc le but c'est d'executer la requete
 ?>
@@ -41,7 +41,7 @@ $result = $conn->query($sql);     // $conn : heya wa7d variable li drna lfog bac
             text-shadow: 2px 2px  rgba(0,0,0,0.7) ;
         }
 
-        form {
+        #absence-form {
             max-width: 500px;
             margin:0 auto 30px;
             padding: 20px;
@@ -116,7 +116,7 @@ $result = $conn->query($sql);     // $conn : heya wa7d variable li drna lfog bac
 </head>
    <body >  
 
-  <h1><stron>Gestionnaire d'absences</strong></h1>
+  <h1><strong>Gestionnaire d'absences</strong></h1>
 
 
  
@@ -136,7 +136,7 @@ $result = $conn->query($sql);     // $conn : heya wa7d variable li drna lfog bac
     <label for="reason">Raison :</label>
    <textarea id="reason" name="reason" required></textarea> 
 
-    <button type="submit" name="submit">Soumettre</button>
+    <button type="submit" name="submit">SUBMIT</button>
   </form>
 
  <!-- now we gonne creat our table tada -->
@@ -147,8 +147,8 @@ $result = $conn->query($sql);     // $conn : heya wa7d variable li drna lfog bac
         <th>Identifiant</th>
         <th>Nom</th>
         <th>Date de début</th>
-        <th>Raison</th>
         <th>Date de fin</th>
+        <th>Raison</th>
       </tr>
     </thead>
     <tbody>
